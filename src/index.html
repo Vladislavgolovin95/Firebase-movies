@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список фильмов</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="title__text-wrapper">
+                <p class="title__text">cписок фильмов</p>
+                <p class="title__year">2023</p>
+            </div>
+            <h1>Посмотреть</h1>
+        </div>
+        <div class="movies">
+            <input 
+                id="inputMovie" 
+                class="inputMovie" 
+                type="text" 
+                placeholder="Добавить фильм" 
+                required pattern="[a-zA-Z]"
+            >
+            <button id="addBtn" class="addBtn"> 
+                <img src="resources/right.png"> 
+            </button>
+            <div id="moviesList" class="moviesList"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+
+</html>

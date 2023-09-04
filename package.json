@@ -1,0 +1,17 @@
+{
+  "name": "movies-app",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build --no-source-maps --dist-dir docs"
+  },
+  "devDependencies": {
+    "parcel": "latest",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "firebase": "^10.1.0",
+    "uuid": "^9.0.0"
+  }
+}
