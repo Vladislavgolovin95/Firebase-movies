@@ -25,10 +25,6 @@ export class Controller {
     this.view.renderMovies(movies);
   }
 
-  handleRenderData = (movies) => {
-    this.view.renderMovies(movies);
-  }
-
   handleViewMovies = (id) => {
     this.model.deleteMovie(id);
   }

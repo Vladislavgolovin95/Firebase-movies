@@ -2,7 +2,7 @@ import { Firebase } from "./firebase.js";
 import { v4 as uuidv4 } from 'uuid';
 
 export class Model {
-  constructor({onMovieListChanged}) {
+  constructor({onMovieListChanged, onDeleteMovie}) {
     this.movies = [];
     this.firebase = new Firebase();
     
@@ -12,6 +12,7 @@ export class Model {
   updateData = () => {
     this.firebase.pull().then(moviesFB => {
       this.movies = moviesFB;
+
       this.onMovieListChanged(this.movies);
     });
   }
@@ -21,7 +22,7 @@ export class Model {
       title: nameMovie,
       viewed: false,
       id: uuidv4(),
-    }
+    };
 
     this.movies.push(movie);
     this.firebase.push(movie);
@@ -35,12 +36,12 @@ export class Model {
     if (label.classList.contains('active-checkbox')) {
       statusMovie = true;
       this.firebase.update(id, statusMovie);
-      console.log(id, statusMovie)
+      this.updateData()
       return
     };
+
     statusMovie = false;
     this.firebase.update(id, statusMovie);
-    console.log(id, statusMovie)
   }
 
   deleteMovie = (id) => {

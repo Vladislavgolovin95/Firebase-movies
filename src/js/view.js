@@ -37,7 +37,6 @@ export class View {
   }
 
   renderMovies = (movies) => {
-    console.log(movies)
     this.moviesNode.innerHTML = '';
     
     movies.forEach(movie => {
